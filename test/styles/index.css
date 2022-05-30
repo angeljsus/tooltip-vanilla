@@ -17,10 +17,6 @@ body {
   border: 1px solid;
   cursor: context-menu;
 }
-.main-container .tooltip {
-  background: #bde0fe;
-  border-radius: 5px;
-}
 .main-container .no-show {
   display: none;
 }

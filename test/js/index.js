@@ -2,26 +2,23 @@
 document.addEventListener('DOMContentLoaded', initialize);
 
 function initialize(){
-	let toolTipElement = '';
-	let windowSize = window.innerWidth;
-	let i = 0, wTotal = 0, position = 0;
 	const elHoverTool1 = document.getElementById('elHoverTool1');
 	const elHoverTool2 = document.getElementById('elHoverTool2');
 	const elHoverTool3 = document.getElementById('elHoverTool3');
 
 	elHoverTool1.addEventListener('mouseover', function(el){
-		loadToolTip(el)
+		loadToolTip(el,400)
 	})
 	elHoverTool2.addEventListener('mouseover', function(el){
-		loadToolTip(el)
+		loadToolTip(el,200)
 	})
 	elHoverTool3.addEventListener('mouseover', function(el){
-		loadToolTip(el)
+		loadToolTip(el,600)
 	})
 }
 
 
-function loadToolTip(element){
+function loadToolTip(element, toolWidth){
 	if (element.target) {
 		element = element.target;
 	} 
@@ -38,13 +35,13 @@ function loadToolTip(element){
 		toolTipElement.classList.remove('no-show');
 		toolTipElement.classList.add('show-tooltip');
 		// posición del elemento que llama al tooltip + la de lo largo del elemento tooltip
-		wTotal = elementProps.x + toolTipElement.clientWidth;
+		wTotal = elementProps.x + toolWidth;
 		// se excedio
 		if (wTotal > windowSize) {
-			position = windowSize-toolTipElement.offsetWidth;
-			toolTipElement.style = `top:${elementProps.bottom}px;left:${position}px;`
+			position = windowSize-toolWidth;
+			toolTipElement.style = `width:${toolWidth}px;top:${elementProps.bottom}px;left:${position}px;`
 		} else {
-			toolTipElement.style = `top:${elementProps.bottom}px;left:${elementProps.x}px;`
+			toolTipElement.style = `width:${toolWidth}px;top:${elementProps.bottom}px;left:${elementProps.x}px;`
 		}
 		// agregando eventos de salida
 		element.addEventListener('mouseleave', function(event){

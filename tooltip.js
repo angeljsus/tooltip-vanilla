@@ -1,4 +1,4 @@
-function loadToolTip(element){
+function loadToolTip(element, toolWidth){
 	if (element.target) {
 		element = element.target;
 	} 
@@ -15,13 +15,13 @@ function loadToolTip(element){
 		toolTipElement.classList.remove('no-show');
 		toolTipElement.classList.add('show-tooltip');
 		// posición del elemento que llama al tooltip + la de lo largo del elemento tooltip
-		wTotal = elementProps.x + toolTipElement.clientWidth;
+		wTotal = elementProps.x + toolWidth;
 		// se excedio
 		if (wTotal > windowSize) {
-			position = windowSize-toolTipElement.offsetWidth;
-			toolTipElement.style = `top:${elementProps.bottom}px;left:${position}px;`
+			position = windowSize-toolWidth;
+			toolTipElement.style = `width:${toolWidth}px;top:${elementProps.bottom}px;left:${position}px;`
 		} else {
-			toolTipElement.style = `top:${elementProps.bottom}px;left:${elementProps.x}px;`
+			toolTipElement.style = `width:${toolWidth}px;top:${elementProps.bottom}px;left:${elementProps.x}px;`
 		}
 		// agregando eventos de salida
 		element.addEventListener('mouseleave', function(event){
