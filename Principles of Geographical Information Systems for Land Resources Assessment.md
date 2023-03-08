@@ -17,7 +17,7 @@ The *map legend* is the key linking the non-spatial attributes to the spatial en
 
 **Geographical data in the computer**
 When geographical data are entered into a computer the user will be most at ease if the geographical information system can accept the phenomenological data structures that he has always been accustomed to using. But computers are not organized like human minds and must be programmed to represent phenomenological structures appropriately. Moreover, the way the geographical data are visualized by the user is frequently not the most efficient way to structure the computer database. Finally, the data have to be written and stored on magnetic devices that need to be addressed in a specific way. We can represent these four stages as follows:
-$${A} \longleftrightarrow$$ {B} $$\longleftrightarrow$$ {C} $$\longleftrightarrow {D}$$
+$${A}\longleftrightarrow{B}\longleftrightarrow{C}\longleftrightarrow{D}$$
 User's perceived phenomenon structure $$\longleftrightarrow$$ GIS representation of phenomenon structure $$\longleftrightarrow$$ Database structure $$\longleftrightarrow$$ Hardware structure
 
 We shall consider stages A, B, and C here; hardware aspects fall outside the scope of this discussion and the interested reader should consult a text on computer architecture.
